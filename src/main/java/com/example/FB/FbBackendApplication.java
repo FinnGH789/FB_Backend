@@ -15,7 +15,7 @@ public class FbBackendApplication {
 
 	@GetMapping(path = "/test")
 	public String returnHallo(){
-		return "Hallo Welt!";
+		return "backend con klappt";
 	}
 
 }

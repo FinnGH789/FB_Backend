@@ -3,12 +3,12 @@ package com.example.FB;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "table_Person")
+@Table(name="persons")
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(name = "person_name")
+    @Column
     private String name;
     @Column
     private int age;
@@ -38,10 +38,7 @@ public class Person {
     }
 
     public Person(String name, int age) {
-        super();
         this.name = name;
         this.age = age;
-
-
     }
 }
