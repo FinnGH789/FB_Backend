@@ -1,19 +1,21 @@
-package com.example.FB;
+package com.example.FB.DataBaseTables;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
-@Table(name="persons")
-public class Person {
+@Table(name="person_table")
+public class Person implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(name = "Name")
     private String name;
-    @Column
+    @Column(name = "Age")
     private int age;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -37,8 +39,11 @@ public class Person {
         this.age = age;
     }
 
-    public Person(String name, int age) {
+    public Person(int id, String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public Person() {
     }
 }
