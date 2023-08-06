@@ -1,11 +1,16 @@
-package com.example.FB.DataBaseTables;
+package com.example.FB.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Entity
 @Table(name="person_table")
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,11 +44,5 @@ public class Person implements Serializable {
         this.age = age;
     }
 
-    public Person(int id, String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
 
-    public Person() {
-    }
 }
