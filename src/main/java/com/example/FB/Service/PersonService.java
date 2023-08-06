@@ -17,6 +17,10 @@ public class PersonService {
         return personRepo.findAll();
     }
 
+    public Person saveDetails(Person person){
+        return personRepo.save(person);
+    }
+
 
 
 }
