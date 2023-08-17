@@ -2,7 +2,9 @@ package com.example.FB.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
@@ -10,6 +12,7 @@ import java.io.Serializable;
 @Table(name="person_table")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter @Setter
 
 public class Person implements Serializable {
     @Id
@@ -19,30 +22,5 @@ public class Person implements Serializable {
     private String name;
     @Column(name = "Age")
     private int age;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
 
 }
